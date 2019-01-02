@@ -2,8 +2,65 @@
 {% block title %}歌手{% endblock %}
 
 {% block content %}
-    <div>
-        <h1>歌手</h1>
-        <img src="/static/images/music.png">
-    </div>
+    <section class="main">
+        <div class="slide" id="J_Slide" style="display: none;"><a
+                href="//itunes.apple.com/cn/app/xia-mi-yin-le/id595594905?mt=8" target="_blank" alt="H5_banner"><img
+                src="//gw.alicdn.com/tps/TB1s.XCKFXXXXbRXFXXXXXXXXXX-750-176.png" width="100%"></a></div>
+        <div class="content">
+            <div class="list" data-type="735464164" title="虾米音乐">
+                <ul>
+                    <li id="1" type="1" class="line">
+                        <div class="next"></div>
+                        <p class="title">华语男歌手</p></li>
+                    <li id="2" type="1" class="line">
+                        <div class="next"></div>
+                        <p class="title">华语女歌手</p></li>
+                    <li id="3" type="1" class="line">
+                        <div class="next"></div>
+                        <p class="title">华语乐队组合</p></li>
+                    <li id="1" type="2" class="line">
+                        <div class="next"></div>
+                        <p class="title">欧美男歌手</p></li>
+                    <li id="2" type="2" class="line">
+                        <div class="next"></div>
+                        <p class="title">欧美女歌手</p></li>
+                    <li id="3" type="2" class="line">
+                        <div class="next"></div>
+                        <p class="title">欧美乐队组合</p></li>
+                    <li id="1" type="3" class="line">
+                        <div class="next"></div>
+                        <p class="title">日本男歌手</p></li>
+                    <li id="2" type="3" class="line">
+                        <div class="next"></div>
+                        <p class="title">日本女歌手</p></li>
+                    <li id="3" type="3" class="line">
+                        <div class="next"></div>
+                        <p class="title">日本乐队组合</p></li>
+                    <li id="1" type="4" class="line">
+                        <div class="next"></div>
+                        <p class="title">韩国男歌手</p></li>
+                    <li id="2" type="4" class="line">
+                        <div class="next"></div>
+                        <p class="title">韩国女歌手</p></li>
+                    <li id="3" type="4" class="line">
+                        <div class="next"></div>
+                        <p class="title">韩国乐队组合</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="loading-wrap" style="display: none;">
+            <div class="loading">
+                <div class="loading-mask"></div>
+                <div class="loading-load">
+                    <div class="loading-bd">
+                        <div class="spinner">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <p>正在加载...</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

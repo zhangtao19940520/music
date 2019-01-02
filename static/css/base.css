@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    min-height: 100%;
 }
 
 .index_page {
@@ -60,7 +61,7 @@ body {
 }
 
 .body_section {
-    margin-top: -20px;
+    /*margin-top: -20px;*/
     /*min-height: 48rem;*/
     background: url("/static/images/bg.png");
     background-size: 100% 100%;
@@ -70,10 +71,6 @@ body {
 .footer_section {
     position: fixed;
     bottom: 0;
-}
-
-.nav-pills > li > a {
-    border-radius: 1px;
 }
 
 /*

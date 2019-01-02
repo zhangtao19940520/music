@@ -13,8 +13,10 @@ $(function () {
     });
 });
 
+/**
+ * 播放音乐的公用方法
+ * */
 function palyer_music(url) {
-    layer.alert(url);
     var ap3 = new APlayer({
         element: document.getElementById('player'),//样式1
         narrow: false,
@@ -23,8 +25,6 @@ function palyer_music(url) {
         music: {
             title: 'Jar Of Love',
             author: '_Re-梦_',
-            // url: '/static/aa.mp3',
-            // url: 'http://fdfs.xmcdn.com/group53/M02/B3/42/wKgLcVwSbVCCRayMAAx30wsoD2U375.mp3',
             url: url,
             pic: '/static/zz.jpg'
         }

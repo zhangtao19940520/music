@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http.response import JsonResponse
+from utils.SearchMusic import *
 
 
 # Create your views here.
@@ -45,3 +47,26 @@ def search(request):
     :return:
     """
     return render(request, 'search.html')
+
+
+def get_search_result(request):
+    """
+    返回搜索结果
+    :param request:
+    :return:
+    """
+    # 返回结果
+    return_data = {}
+    request_get = request.GET
+    search_msg = request_get.get('search_msgs', '')
+
+    search_res = serch_handler(search_msg)
+    # print(search_res)
+    if search_res['ret']==200:
+        return_data = {'code': '200', 'msg': search_res['msg'],'data':search_res['data']}
+    else:
+        return_data = {'code': '000', 'msg': '很抱歉，没有搜到您要的结果。'}
+
+
+
+    return JsonResponse(return_data)

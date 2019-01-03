@@ -1,9 +1,7 @@
 <nav class="navs">
     <div class="nav navigation">
-        <a class="item nav-new" data-url="/new" href="/">新歌</a>
-        <a class="item nav-chart" data-url="/charts" href="/charts">排行榜</a>
-        <a class="item nav-collect" data-url="/collect" href="/collect">歌单</a>
-        <a class="item nav-artist" data-url="/artist" href="/artist">歌手</a>
-        <a class="item nav-search" data-url="/search" href="/search">搜索</a>
+        <a class="item nav-chart active" target-url="home"  @click="pageChange('home')">推荐</a>
+        <a class="item nav-collect" target-url="collect" @click="pageChange('collect')">歌单</a>
+        <a class="item nav-search" target-url="search" @click="pageChange('search')">搜索</a>
     </div>
 </nav>

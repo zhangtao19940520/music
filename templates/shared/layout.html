@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/APlayer/APlayer.min.css">
     <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/page/search.css">
     <link rel="stylesheet" href="/static/css/base.css">
     {% block style %}{% endblock %}
 </head>
 <body>
-<div class="index_page">
+<div class="index_page" id="app">
 
     <div class="header_section">
         {% include 'shared/header.html' %}
@@ -35,9 +36,9 @@
 <script src="/static/js/jquery.min.js"></script>
 <script src="/static/bootstrap/js/bootstrap.min.js"></script>
 <script src="/static/APlayer/APlayer.min.js"></script>
-<script src="/static/js/public.js"></script>
 <script src="/static/layer/layer.js"></script>
 <script src="/static/js/vue.min.js"></script>
+<script src="/static/js/public.js"></script>
 <script>
     $.ajaxSetup({
         data: {csrfmiddlewaretoken: '{{ csrf_token }}'},

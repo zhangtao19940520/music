@@ -11,8 +11,8 @@ def serch_handler(msg):
     :param msg: 搜索信息
     :return:
     """
-    url = 'https://www.ximalaya.com/revision/search?core=all&kw={0}&spellchecker=true&device=iPhone'
-
+    # url = 'https://www.ximalaya.com/revision/search?core=all&kw={0}&spellchecker=true&device=iPhone'
+    url='https://www.ximalaya.com/revision/search?kw={0}&page=1&spellchecker=false&condition=relation&rows=50&device=iPhone&core=track&fq=category_id%3A2&paidFilter=false'
     user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
     # 添加代理
     headers = {'User-Agent': user_agent}

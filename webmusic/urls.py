@@ -5,9 +5,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.home),
-    url(r'^charts', views.charts),
     url(r'^collect', views.collect),
-    url(r'^artist', views.artist),
     url(r'^search', views.search),
     url(r'^get_search_result', views.get_search_result),
 ]

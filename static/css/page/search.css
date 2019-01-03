@@ -1,0 +1,58 @@
+#search_result li {
+    background: #eeeeee;
+    padding: 1rem 2rem;
+    height: 8rem;
+}
+
+.list {
+    padding-bottom: 0;
+}
+
+.left {
+    width: 25%;
+}
+
+.right {
+    width: 75%;
+}
+
+.song-info {
+    float: left;
+    width: 78%;
+}
+
+.song-action {
+    float: right;
+    width: 22%;
+    line-height: 6rem;
+}
+
+.li_img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+}
+
+.list .line img {
+    width: 6rem;
+    height: 6rem;
+    margin-right: 1rem;
+}
+
+.list .line .song-name {
+    font-size: 1.6rem;
+    color: #d58512;
+}
+
+.list .line .singer-name {
+    font-size: 1.2rem;
+    color: #afafb0;
+    line-height: 4rem;
+}
+
+.list .line .action_image {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 1.5rem;
+}

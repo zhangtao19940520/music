@@ -9,8 +9,8 @@ var app = new Vue({
         search_msg: '',
         music_list: [],
         is_searched: false,//是否执行了搜索功能
-        show_page: 'home',
-
+        show_page: 'home',//默认显示home页
+        search_history: ['你把我灌醉', '爱情转移', '不要在我寂寞的时候说爱我', '等', '浪子回头', 'I beliver'],//搜索历史
     },
     methods: {
         /**

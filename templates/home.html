@@ -203,7 +203,8 @@
                 <div class="search">
                     <div class="form">
                         <div class="keyipt">
-                            <input placeholder="输入歌曲、专辑、艺人名搜索" class="key" type="search" v-model="search_msg">
+                            <input placeholder="输入歌曲、专辑、艺人名搜索" class="key" type="search" v-model="search_msg"
+                                   v-on:input = "search_msg_change">
                         </div>
                         <a class="btn-search" @click="search()">搜 索</a>
                     </div>
@@ -211,206 +212,11 @@
                 <div class="hot-key" v-show="!is_searched"><h3 class="tit">今日搜索热词</h3>
                     <div class="list">
                         <ul>
-                            <li data-index="0" key="生僻字" class="line">
-                                <div class="next"></div>
-                                <p class="index rk">1</p>
-                                <p class="title">生僻字</p></li>
-                            <li data-index="1" key="exo" class="line">
-                                <div class="next"></div>
-                                <p class="index rk">2</p>
-                                <p class="title">exo</p></li>
-                            <li data-index="2" key="沙漠骆驼" class="line">
-                                <div class="next"></div>
-                                <p class="index rk">3</p>
-                                <p class="title">沙漠骆驼</p></li>
-                            <li data-index="3" key="五月天" class="line">
-                                <div class="next"></div>
-                                <p class="index ">4</p>
-                                <p class="title">五月天</p></li>
-                            <li data-index="4" key="浪子回头" class="line">
-                                <div class="next"></div>
-                                <p class="index ">5</p>
-                                <p class="title">浪子回头</p></li>
-                            <li data-index="5" key="雪落下的声音" class="line">
-                                <div class="next"></div>
-                                <p class="index ">6</p>
-                                <p class="title">雪落下的声音</p></li>
-                            <li data-index="6" key="抖音" class="line">
-                                <div class="next"></div>
-                                <p class="index ">7</p>
-                                <p class="title">抖音</p></li>
-                            <li data-index="7" key="往后余生" class="line">
-                                <div class="next"></div>
-                                <p class="index ">8</p>
-                                <p class="title">往后余生</p></li>
-                            <li data-index="8" key="邓紫棋" class="line">
-                                <div class="next"></div>
-                                <p class="index ">9</p>
-                                <p class="title">邓紫棋</p></li>
-                            <li data-index="9" key="毛不易" class="line">
-                                <div class="next"></div>
-                                <p class="index ">10</p>
-                                <p class="title">毛不易</p></li>
-                            <li data-index="10" key="刘德华" class="line">
-                                <div class="next"></div>
-                                <p class="index ">11</p>
-                                <p class="title">刘德华</p></li>
-                            <li data-index="11" key="学猫叫" class="line">
-                                <div class="next"></div>
-                                <p class="index ">12</p>
-                                <p class="title">学猫叫</p></li>
-                            <li data-index="12" key="dj" class="line">
-                                <div class="next"></div>
-                                <p class="index ">13</p>
-                                <p class="title">dj</p></li>
-                            <li data-index="13" key="田馥甄" class="line">
-                                <div class="next"></div>
-                                <p class="index ">14</p>
-                                <p class="title">田馥甄</p></li>
-                            <li data-index="14" key="张学友" class="line">
-                                <div class="next"></div>
-                                <p class="index ">15</p>
-                                <p class="title">张学友</p></li>
-                            <li data-index="15" key="陈奕迅" class="line">
-                                <div class="next"></div>
-                                <p class="index ">16</p>
-                                <p class="title">陈奕迅</p></li>
-                            <li data-index="16" key="光年之外" class="line">
-                                <div class="next"></div>
-                                <p class="index ">17</p>
-                                <p class="title">光年之外</p></li>
-                            <li data-index="17" key="抖音神曲" class="line">
-                                <div class="next"></div>
-                                <p class="index ">18</p>
-                                <p class="title">抖音神曲</p></li>
-                            <li data-index="18" key="卡路里" class="line">
-                                <div class="next"></div>
-                                <p class="index ">19</p>
-                                <p class="title">卡路里</p></li>
-                            <li data-index="19" key="新年好" class="line">
-                                <div class="next"></div>
-                                <p class="index ">20</p>
-                                <p class="title">新年好</p></li>
-                            <li data-index="20" key="东西" class="line">
-                                <div class="next"></div>
-                                <p class="index ">21</p>
-                                <p class="title">东西</p></li>
-                            <li data-index="21" key="周华健" class="line">
-                                <div class="next"></div>
-                                <p class="index ">22</p>
-                                <p class="title">周华健</p></li>
-                            <li data-index="22" key="一百万个可能" class="line">
-                                <div class="next"></div>
-                                <p class="index ">23</p>
-                                <p class="title">一百万个可能</p></li>
-                            <li data-index="23" key="体面" class="line">
-                                <div class="next"></div>
-                                <p class="index ">24</p>
-                                <p class="title">体面</p></li>
-                            <li data-index="24" key="盗将行" class="line">
-                                <div class="next"></div>
-                                <p class="index ">25</p>
-                                <p class="title">盗将行</p></li>
-                            <li data-index="25" key="好嗨哦" class="line">
-                                <div class="next"></div>
-                                <p class="index ">26</p>
-                                <p class="title">好嗨哦</p></li>
-                            <li data-index="26" key="你一定要幸福" class="line">
-                                <div class="next"></div>
-                                <p class="index ">27</p>
-                                <p class="title">你一定要幸福</p></li>
-                            <li data-index="27" key="林宥嘉" class="line">
-                                <div class="next"></div>
-                                <p class="index ">28</p>
-                                <p class="title">林宥嘉</p></li>
-                            <li data-index="28" key="38度6" class="line">
-                                <div class="next"></div>
-                                <p class="index ">29</p>
-                                <p class="title">38度6</p></li>
-                            <li data-index="29" key="贝瓦儿歌" class="line">
-                                <div class="next"></div>
-                                <p class="index ">30</p>
-                                <p class="title">贝瓦儿歌</p></li>
-                            <li data-index="30" key="一曲相思" class="line">
-                                <div class="next"></div>
-                                <p class="index ">31</p>
-                                <p class="title">一曲相思</p></li>
-                            <li data-index="31" key="男孩" class="line">
-                                <div class="next"></div>
-                                <p class="index ">32</p>
-                                <p class="title">男孩</p></li>
-                            <li data-index="32" key="我和我的祖国" class="line">
-                                <div class="next"></div>
-                                <p class="index ">33</p>
-                                <p class="title">我和我的祖国</p></li>
-                            <li data-index="33" key="red velvet" class="line">
-                                <div class="next"></div>
-                                <p class="index ">34</p>
-                                <p class="title">red velvet</p></li>
-                            <li data-index="34" key="梁静茹" class="line">
-                                <div class="next"></div>
-                                <p class="index ">35</p>
-                                <p class="title">梁静茹</p></li>
-                            <li data-index="35" key="可不可以" class="line">
-                                <div class="next"></div>
-                                <p class="index ">36</p>
-                                <p class="title">可不可以</p></li>
-                            <li data-index="36" key="说散就散" class="line">
-                                <div class="next"></div>
-                                <p class="index ">37</p>
-                                <p class="title">说散就散</p></li>
-                            <li data-index="37" key="李宗盛" class="line">
-                                <div class="next"></div>
-                                <p class="index ">38</p>
-                                <p class="title">李宗盛</p></li>
-                            <li data-index="38" key="平凡之路" class="line">
-                                <div class="next"></div>
-                                <p class="index ">39</p>
-                                <p class="title">平凡之路</p></li>
-                            <li data-index="39" key="月牙湾" class="line">
-                                <div class="next"></div>
-                                <p class="index ">40</p>
-                                <p class="title">月牙湾</p></li>
-                            <li data-index="40" key="王菲" class="line">
-                                <div class="next"></div>
-                                <p class="index ">41</p>
-                                <p class="title">王菲</p></li>
-                            <li data-index="41" key="遥远的你" class="line">
-                                <div class="next"></div>
-                                <p class="index ">42</p>
-                                <p class="title">遥远的你</p></li>
-                            <li data-index="42" key="张国荣" class="line">
-                                <div class="next"></div>
-                                <p class="index ">43</p>
-                                <p class="title">张国荣</p></li>
-                            <li data-index="43" key="夜之光" class="line">
-                                <div class="next"></div>
-                                <p class="index ">44</p>
-                                <p class="title">夜之光</p></li>
-                            <li data-index="44" key="华晨宇" class="line">
-                                <div class="next"></div>
-                                <p class="index ">45</p>
-                                <p class="title">华晨宇</p></li>
-                            <li data-index="45" key="朴树" class="line">
-                                <div class="next"></div>
-                                <p class="index ">46</p>
-                                <p class="title">朴树</p></li>
-                            <li data-index="46" key="起风了" class="line">
-                                <div class="next"></div>
-                                <p class="index ">47</p>
-                                <p class="title">起风了</p></li>
-                            <li data-index="47" key="一生所爱" class="line">
-                                <div class="next"></div>
-                                <p class="index ">48</p>
-                                <p class="title">一生所爱</p></li>
-                            <li data-index="48" key="小苹果" class="line">
-                                <div class="next"></div>
-                                <p class="index ">49</p>
-                                <p class="title">小苹果</p></li>
-                            <li data-index="49" key="新年快乐" class="line">
-                                <div class="next"></div>
-                                <p class="index ">50</p>
-                                <p class="title">新年快乐</p></li>
+                            <li v-for="(item, index) of search_history" class="line">
+                                <div class="next" @click="click_history(item)"></div>
+                                <p class="index rk">[[index+1]]</p>
+                                <p class="title">[[item]]</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -441,8 +247,4 @@
 
         </section>
     </div>
-
-
-
-
 {% endblock %}

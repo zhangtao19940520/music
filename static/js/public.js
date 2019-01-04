@@ -5,14 +5,36 @@ var app = new Vue({
     delimiters: ["[[", "]]"],
     el: "#app",
     data: {
-        msg: 'hello',
         search_msg: '',
         music_list: [],
         is_searched: false,//是否执行了搜索功能
-        show_page: 'home',
-
+        show_page: 'home',//默认显示首页
+        search_history: [],//搜索历史
     },
     methods: {
+        /**
+         * 页面加载时获取初始化数据
+         * */
+        loadData: function () {
+            var this_vue = this;
+            $.ajax({
+                url: '/get_home_data',
+                data: {},
+                type: 'GET',
+                dataType: 'JSON',
+                beforeSend: function () {
+                    layer.load();
+                },
+                success: function (data) {
+                    layer.closeAll();
+                    //搜索历史
+                    this_vue.search_history = data.search_history.split(',').reverse();
+                },
+                error: function (xhr, type) {
+                    layer.closeAll();
+                }
+            });
+        },
         /**
          * 页面加载
          * */
@@ -55,6 +77,15 @@ var app = new Vue({
                         return false;
                     }
                     else {
+                        //添加搜索历史
+                        if (!this_vue.search_history.includes(this_vue.search_msg)) {
+                            this_vue.search_history.splice(0, 0, this_vue.search_msg);
+                        }
+                        else {
+                            this_vue.search_history.splice(this_vue.search_history.indexOf(this_vue.search_msg), 1);
+                            this_vue.search_history.splice(0, 0, this_vue.search_msg);
+                        }
+
                         var result = data.data.result;
                         this_vue.music_list = result.response.docs;
                         this_vue.is_searched = true;
@@ -65,6 +96,22 @@ var app = new Vue({
                     layer.msg('搜索貌似出错了...');
                 }
             });
+        },
+
+        /**
+         * 点击搜素历史
+         * */
+        click_history: function (msg) {
+            this.search_msg = msg;
+            this.search();
+        },
+        /**
+         * 搜索框内容改变事件
+         * */
+        search_msg_change: function () {
+            if (this.search_msg == '') {
+                this.is_searched = false;
+            }
         },
         /**
          * 播放音乐
@@ -90,5 +137,6 @@ var app = new Vue({
     computed: {},
     mounted: function () {
         this.loadPage();
+        this.loadData();
     }
 });

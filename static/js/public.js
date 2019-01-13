@@ -28,7 +28,9 @@ var app = new Vue({
                 success: function (data) {
                     layer.closeAll();
                     //搜索历史
-                    this_vue.search_history = data.search_history.split(',').reverse();
+                    if (data.search_history.length > 0) {
+                        this_vue.search_history = data.search_history.split(',').reverse();
+                    }
                 },
                 error: function (xhr, type) {
                     layer.closeAll();

@@ -21,7 +21,8 @@ def get_home_data(request):
     ret = {}
     # 搜索历史
     search_history = request.COOKIES.get('search_history', '')
-    search_history = json.loads(search_history)
+    if search_history:
+        search_history = json.loads(search_history)
     ret['search_history'] = search_history
 
     return JsonResponse(ret)

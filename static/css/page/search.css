@@ -33,7 +33,9 @@
     border: 1px solid #ffffff;
     border-radius: 50%;
 }
-
+.home_img{
+    border-radius:0;
+}
 .list .line img {
     width: 6rem;
     height: 6rem;

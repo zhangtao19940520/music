@@ -25,6 +25,15 @@ def get_home_data(request):
         search_history = json.loads(search_history)
     ret['search_history'] = search_history
 
+    # 推荐歌曲
+    recommend_music_list = []  # 推荐歌单
+
+    recommend_music_json = recommend_tp()  # 获取推荐歌单的返回结果
+
+    recommend_music_list = recommend_music_json['data']['albums']  # 截取需要的数据
+
+    ret['recommend_music_list'] = recommend_music_list
+
     return JsonResponse(ret)
 
 
@@ -67,3 +76,17 @@ def get_search_result(request):
     retResponse.set_cookie('search_history', json.dumps(','.join(search_history_list)))
 
     return retResponse
+
+
+def get_album_info(request, albumId):
+    """
+    推荐歌单详情
+    :param request:
+    :return:
+    """
+    ret = {}
+    if len(albumId) > 0:
+        album_info_json = album_info(albumId)
+        album_info_list = album_info_json['data']['tracksAudioPlay']
+        ret['album_info_list'] = album_info_list
+    return JsonResponse(ret)

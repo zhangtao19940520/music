@@ -64,11 +64,14 @@ var app = new Vue({
                 },
                 success: function (data) {
                     layer.closeAll();
+
                     //搜索历史
                     if (data.search_history.length > 0) {
                         this_vue.search_history = data.search_history.split(',').reverse();
-                        this_vue.recommend_music_list = data.recommend_music_list;
+
                     }
+                    //推荐歌单
+                    this_vue.recommend_music_list = data.recommend_music_list;
                 },
                 error: function (xhr, type) {
                     layer.closeAll();

@@ -23,8 +23,8 @@ class SendEmail(object):
         self.passwd = ""
         self.host = ""
 
-        server = smtplib.SMTP()
-        server.connect(self.host, 25)
+        server = smtplib.SMTP_SSL()
+        server.connect(self.host, 465)
         server.login(self.user, self.passwd)
         self.server = server
 

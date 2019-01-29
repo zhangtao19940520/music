@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="246cd75a-a0d2-4d2d-9490-51e23c020aca" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/settings.py" afterPath="$PROJECT_DIR$/music/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/base.css" afterPath="$PROJECT_DIR$/static/css/base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/page/search.css" afterPath="$PROJECT_DIR$/static/css/page/search.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/public.js" afterPath="$PROJECT_DIR$/static/js/public.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/shared/header.html" afterPath="$PROJECT_DIR$/templates/shared/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/shared/naves.html" afterPath="$PROJECT_DIR$/templates/shared/naves.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/BaseFunction.py" afterPath="$PROJECT_DIR$/utils/BaseFunction.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/SearchMusic.py" afterPath="$PROJECT_DIR$/utils/SearchMusic.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webmusic/admin.py" afterPath="$PROJECT_DIR$/webmusic/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webmusic/models.py" afterPath="$PROJECT_DIR$/webmusic/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webmusic/urls.py" afterPath="$PROJECT_DIR$/webmusic/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webmusic/views.py" afterPath="$PROJECT_DIR$/webmusic/views.py" />
     </list>
     <ignored path="music.iws" />
@@ -48,17 +36,17 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webmusic/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="679">
+              <caret line="142" column="9" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
                 <element signature="e#296#387#0" expanded="false" />
+                <element signature="e#422#1517#0" expanded="false" />
                 <element signature="e#1556#2757#0" expanded="false" />
                 <element signature="e#2802#3088#0" expanded="false" />
-                <element signature="e#3118#3909#0" expanded="false" />
-                <element signature="e#3936#4656#0" expanded="false" />
-                <element signature="e#4684#4789#0" expanded="false" />
-                <element signature="e#4825#5920#0" expanded="false" />
+                <element signature="e#3933#4653#0" expanded="false" />
+                <element signature="e#4681#4786#0" expanded="false" />
+                <element signature="e#4822#5917#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -77,21 +65,21 @@
       <file leaf-file-name="public.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/public.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="279" column="61" selection-start-line="279" selection-start-column="49" selection-end-line="279" selection-end-column="61" />
+            <state relative-caret-position="457">
+              <caret line="194" column="36" selection-start-line="194" selection-start-column="36" selection-end-line="194" selection-end-column="36" />
               <folding>
                 <element signature="e#519#1760#0" expanded="false" />
-                <element signature="e#1848#3531#0" expanded="false" />
-                <element signature="e#3602#5081#0" expanded="false" />
-                <element signature="e#5155#6769#0" expanded="false" />
-                <element signature="e#6850#7480#0" expanded="false" />
-                <element signature="e#7567#8787#0" expanded="false" />
-                <element signature="e#9926#10285#0" expanded="false" />
-                <element signature="e#10395#10475#0" expanded="false" />
-                <element signature="e#10547#12072#0" expanded="false" />
-                <element signature="e#12318#12426#0" expanded="false" />
-                <element signature="e#12538#13159#0" expanded="false" />
-                <element signature="e#13226#13646#0" expanded="false" />
+                <element signature="e#1848#3613#0" expanded="false" />
+                <element signature="e#3684#5163#0" expanded="false" />
+                <element signature="e#6894#7524#0" expanded="false" />
+                <element signature="e#7611#8831#0" expanded="false" />
+                <element signature="e#8913#9896#0" expanded="false" />
+                <element signature="e#9970#10329#0" expanded="false" />
+                <element signature="e#10439#10519#0" expanded="false" />
+                <element signature="e#10591#12058#0" expanded="false" />
+                <element signature="e#12304#12412#0" expanded="false" />
+                <element signature="e#12524#13145#0" expanded="false" />
+                <element signature="e#13212#13632#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -107,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MailUtils.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MailUtils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/MailUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+            <state relative-caret-position="209">
+              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
               <folding>
                 <element signature="e#704#1376#0" expanded="false" />
                 <element signature="e#1470#2772#0" expanded="false" />
@@ -148,6 +136,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SearchMusic.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/utils/SearchMusic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/shared/header.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -163,16 +161,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="388">
               <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/base.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1721">
-              <caret line="130" column="1" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -881,14 +869,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/RedisModel.py" />
-    <entry file="file://$PROJECT_DIR$/utils/SearchMusic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/shared/naves.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -999,51 +979,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/public.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="279" column="61" selection-start-line="279" selection-start-column="49" selection-end-line="279" selection-end-column="61" />
+        <state relative-caret-position="457">
+          <caret line="194" column="36" selection-start-line="194" selection-start-column="36" selection-end-line="194" selection-end-column="36" />
           <folding>
             <element signature="e#519#1760#0" expanded="false" />
-            <element signature="e#1848#3531#0" expanded="false" />
-            <element signature="e#3602#5081#0" expanded="false" />
-            <element signature="e#5155#6769#0" expanded="false" />
-            <element signature="e#6850#7480#0" expanded="false" />
-            <element signature="e#7567#8787#0" expanded="false" />
-            <element signature="e#9926#10285#0" expanded="false" />
-            <element signature="e#10395#10475#0" expanded="false" />
-            <element signature="e#10547#12072#0" expanded="false" />
-            <element signature="e#12318#12426#0" expanded="false" />
-            <element signature="e#12538#13159#0" expanded="false" />
-            <element signature="e#13226#13646#0" expanded="false" />
+            <element signature="e#1848#3613#0" expanded="false" />
+            <element signature="e#3684#5163#0" expanded="false" />
+            <element signature="e#6894#7524#0" expanded="false" />
+            <element signature="e#7611#8831#0" expanded="false" />
+            <element signature="e#8913#9896#0" expanded="false" />
+            <element signature="e#9970#10329#0" expanded="false" />
+            <element signature="e#10439#10519#0" expanded="false" />
+            <element signature="e#10591#12058#0" expanded="false" />
+            <element signature="e#12304#12412#0" expanded="false" />
+            <element signature="e#12524#13145#0" expanded="false" />
+            <element signature="e#13212#13632#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webmusic/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="679">
+          <caret line="142" column="9" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
             <element signature="e#296#387#0" expanded="false" />
+            <element signature="e#422#1517#0" expanded="false" />
             <element signature="e#1556#2757#0" expanded="false" />
             <element signature="e#2802#3088#0" expanded="false" />
-            <element signature="e#3118#3909#0" expanded="false" />
-            <element signature="e#3936#4656#0" expanded="false" />
-            <element signature="e#4684#4789#0" expanded="false" />
-            <element signature="e#4825#5920#0" expanded="false" />
+            <element signature="e#3933#4653#0" expanded="false" />
+            <element signature="e#4681#4786#0" expanded="false" />
+            <element signature="e#4822#5917#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/MailUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+        <state relative-caret-position="209">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
           <folding>
             <element signature="e#704#1376#0" expanded="false" />
             <element signature="e#1470#2772#0" expanded="false" />
             <element signature="e#2859#4105#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/SearchMusic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

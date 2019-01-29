@@ -134,9 +134,10 @@ def get_code(request):
     mail = SendEmail()
     sub = '你好：{0}'.format(code)
     email_msg = "<h1>{0}</h1><p>您正在登录音乐空间，唯一标识码是{0}，5分钟内有效。如非本人操作，可不予理会。</p>".format(code)
+    cache.set(email, code, 5 * 60)
     if mail.sendTxtMail(mailto_list, sub, email_msg, is_html=True):
         res = {'has_error': False, 'msg': '验证码已发送至邮箱，5分钟内有效。'}
-        cache.set(email, code, 5 * 60)
+
         # print(cache.get(email))
         # print(cache.has_key(email))
     else:

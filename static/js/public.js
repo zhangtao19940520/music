@@ -81,14 +81,17 @@ var app = new Vue({
                     if (response.has_error) {
                         icon = 0;
                     }
-                    if (this_vue.collect_list[song_info.song_id] == undefined) {
-                        this_vue.collect_list[song_info.song_id] = song_info;
-                        $(the.target).attr('src', '/static/images/collect.png');
-                    }
                     else {
-                        delete this_vue.collect_list[song_info.song_id];
-                        $(the.target).attr('src', '/static/images/nocollect.png');
+                        if (this_vue.collect_list[song_info.song_id] == undefined) {
+                            this_vue.collect_list[song_info.song_id] = song_info;
+                            $(the.target).attr('src', '/static/images/collect.png');
+                        }
+                        else {
+                            delete this_vue.collect_list[song_info.song_id];
+                            $(the.target).attr('src', '/static/images/nocollect.png');
+                        }
                     }
+
                     layer.msg(response.msg, {icon: icon});
 
                 },
@@ -190,7 +193,6 @@ var app = new Vue({
                     layer.msg(response.msg, {icon: icon});
                 },
                 error: function () {
-                    layer.closeAll();
                     layer.msg('获取验证码失败', {icon: 2});
                 }
             });
@@ -337,7 +339,6 @@ var app = new Vue({
                         var result = data.data.result;
                         this_vue.music_list = result.response.docs;
                         this_vue.is_searched = true;
-                        console.log(this_vue.music_list);
                     }
                 },
                 error: function (xhr, type) {

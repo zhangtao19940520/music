@@ -35,7 +35,7 @@ def album_info(albumId):
     :param albumId:
     :return:
     """
-    url = "https://www.ximalaya.com/revision/play/album?albumId={0}&pageNum=1&sort=-1&pageSize=30"
+    url = "https://www.ximalaya.com/revision/play/album?albumId={0}&pageNum=1&sort=-1&pageSize=50"
     request_url = url.format(albumId)
     return get_url_response(request_url)
 

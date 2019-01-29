@@ -9,10 +9,12 @@
 }
 
 .left {
+    float: left;
     width: 25%;
 }
 
 .right {
+    float: right;
     width: 75%;
 }
 
@@ -24,7 +26,7 @@
 .song-action {
     float: right;
     width: 22%;
-    line-height: 6rem;
+    /*line-height: 6rem;*/
 }
 
 .li_img {
@@ -54,7 +56,7 @@
 }
 
 .list .line .action_image {
-    width: 3rem;
-    height: 3rem;
-    margin-top: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.8rem;
 }

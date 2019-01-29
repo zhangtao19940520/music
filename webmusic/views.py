@@ -1,6 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http.response import JsonResponse
 from utils.SearchMusic import *
+from utils.BaseFunction import *
+from utils.MailUtils import *
+from django.core.cache import cache
+from .models import *
 
 
 # Create your views here.
@@ -33,6 +37,24 @@ def get_home_data(request):
     recommend_music_list = recommend_music_json['data']['albums']  # 截取需要的数据
 
     ret['recommend_music_list'] = recommend_music_list
+
+    #登录用户帐号
+    ret['user_name'] = request.session.get('user_name', '')
+    #收藏
+    collect_list=collect.objects.filter(user_name=request.session.get('user_name', ''))
+    collect_dic = {}
+    if collect_list:
+        for item in collect_list.values_list():
+            collect_dic[item[2]]={
+                'song_id': item[2],
+                'corver_pic': item[3],
+                'song_src': item[4],
+                'song_name': item[5],
+                'album_name': item[6],
+                'song_user_name': item[7],
+            }
+
+    ret['collect_list']=collect_dic
 
     return JsonResponse(ret)
 
@@ -90,3 +112,108 @@ def get_album_info(request, albumId):
         album_info_list = album_info_json['data']['tracksAudioPlay']
         ret['album_info_list'] = album_info_list
     return JsonResponse(ret)
+
+
+def get_code(request):
+    """
+    获取邮箱验证码
+    :param request:
+    :return:
+    """
+    res = {}
+    # 收件人邮箱
+    email = request.POST.get('email', '')
+    # 随机验证码
+    code = get_random_code(length=6)
+
+    if not email:
+        res = {'has_error': True, 'msg': '请输入邮箱'}
+        return JsonResponse(res)
+    # 邮件接收方
+    mailto_list = [email]
+    mail = SendEmail()
+    sub = '你好：{0}'.format(code)
+    email_msg = "<h1>{0}</h1><p>您正在登录音乐空间，唯一标识码是{0}，5分钟内有效。如非本人操作，可不予理会。</p>".format(code)
+    if mail.sendTxtMail(mailto_list, sub, email_msg, is_html=True):
+        res = {'has_error': False, 'msg': '验证码已发送至邮箱，5分钟内有效。'}
+        cache.set(email, code, 5 * 60)
+        # print(cache.get(email))
+        # print(cache.has_key(email))
+    else:
+        res = {'has_error': True, 'msg': '邮件发送失败'}
+
+    return JsonResponse(res)
+
+
+def login(request):
+    """
+    用户登录
+    :param request:
+    :return:
+    """
+    res = {}
+    email = request.POST.get('email', '')
+    code = request.POST.get('code', '')
+
+    if not email:
+        res = {'has_error': True, 'msg': '请输入您的邮箱'}
+        return JsonResponse(res)
+    elif not code:
+        res = {'has_error': True, 'msg': '请输入验证码'}
+        return JsonResponse(res)
+    if not cache.has_key(email):
+        res = {'has_error': True, 'msg': '验证码已失效'}
+        return JsonResponse(res)
+    if cache.get(email) != code:
+        res = {'has_error': True, 'msg': '验证码不正确'}
+        return JsonResponse(res)
+
+    res = {'has_error': False, 'msg': '登录成功'}
+    request.session['user_name'] = email.split('@')[0]
+    return JsonResponse(res)
+
+
+def logout(request):
+    """
+    注销
+    :param request:
+    :return:
+    """
+    request.session.clear()
+
+    return redirect('/')
+
+
+def collect_action(request):
+    """
+    收藏夹的操作（添加收藏或者取消收藏）
+    :param request:
+    :return:
+    """
+    res = {}
+
+    user_name = request.session.get('user_name', '')
+    if not user_name:
+        res = {'has_error': True, 'msg': '您尚未登录，无法进行收藏相关操作'}
+        return JsonResponse(res)
+
+    song_info = {
+        'user_name': user_name,
+        'song_id': request.POST.get('song_id', ''),
+        'corver_pic': request.POST.get('corver_pic', ''),
+        'song_src': request.POST.get('song_src', ''),
+        'song_name': request.POST.get('song_name', ''),
+        'album_name': request.POST.get('album_name', ''),
+        'song_user_name': request.POST.get('song_user_name', '')
+    }
+
+    collect_model = collect.objects.filter(user_name=user_name, song_id=song_info['song_id'])
+
+    if not collect_model:
+        if collect.objects.create(**song_info):
+            res = {'has_error': False, 'msg': '已收藏'}
+            return JsonResponse(res)
+    else:
+        collect.objects.filter(user_name=user_name, song_id=song_info['song_id']).delete()
+        res = {'has_error': False, 'msg': '已取消收藏'}
+        return JsonResponse(res)

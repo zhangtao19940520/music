@@ -79,6 +79,22 @@ DATABASES = {
     }
 }
 
+##redis配置
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+            'CONNECTION_POOL_KWARGS': {"max_connections": 100},
+            # "PASSWORD":"密码",
+        }
+    },
+}
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 7
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 

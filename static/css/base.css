@@ -75,11 +75,11 @@ body {
     right: 0;
 }
 
-.left {
+.fl {
     float: left;
 }
 
-.right {
+.fr {
     float: right;
 }
 
@@ -94,8 +94,76 @@ body {
     display: none;
 }
 
+.user_name {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    /*opacity: 0.7;*/
+    color: black;
+    line-height: 8rem;
+}
+
+.face_img {
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem 1.5rem 0 1.5rem;
+}
+
 .album_info {
     background: #f4f4f4;
+}
+
+.no_login {
+    width: 100%;
+    padding-top: 5rem;
+    height: 20rem;
+    text-align: center;
+}
+
+#login {
+    padding: 4rem;
+    background: #f4f4f4;
+}
+
+.btn-center {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/*箭头向上*/
+.to_top {
+    width: 0;
+    height: 0;
+    border-bottom: 4px solid gold;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+/*箭头向下*/
+.to_bottom {
+    width: 0;
+    height: 0;
+    border-top: 4px solid gold;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+/*箭头向左*/
+.to_left {
+    width: 0;
+    height: 0;
+    border-right: 10px solid #ccc;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+/*箭头向右*/
+.to_right {
+    width: 0;
+    height: 0;
+    border-left: 10px solid #ccc;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
 }
 
 /*

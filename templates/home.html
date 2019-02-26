@@ -12,7 +12,7 @@
                     <ul>
                         <li v-for="(item, index) of recommend_music_list" class="line">
                             <div class="left">
-                                <img v-bind:src="[[item.cover_path==''?'/static/images/music.png':item.cover]]"
+                                <img v-bind:src="[[item.cover_path==''?'/static/images/music.png':'http://imagev2.xmcdn.com/'+item.cover]]"
                                      class="li_img home_img"/>
                             </div>
                             <div class="right">

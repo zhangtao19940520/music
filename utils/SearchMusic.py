@@ -1,11 +1,10 @@
 __author__ = "Jent Zhang"
 
-from urllib import parse
-from urllib import request
+import urllib.request
+import urllib.parse
 import json
 from bs4 import BeautifulSoup
 import requests
-import random
 import re
 
 music_url = "https://www.ximalaya.com"
@@ -20,7 +19,7 @@ def serch_handler(msg):
     # url = 'https://www.ximalaya.com/revision/search?core=all&kw={0}&spellchecker=true&device=iPhone'
     url = 'https://www.ximalaya.com/revision/search?kw={0}&page=1&spellchecker=false&condition=relation&rows=50&device=iPhone&core=track&fq=category_id%3A2&paidFilter=false'
 
-    request_url = url.format(parse.quote(msg))  # url编码
+    request_url = url.format(urllib.parse.quote(msg))  # url编码
 
     return get_url_response(request_url)
 
@@ -136,9 +135,9 @@ def get_url_response(request_url):
     # 添加代理
     headers = {'User-Agent': user_agent}
 
-    req = request.Request(request_url, None, headers)
+    req = urllib.request.Request(request_url, None, headers)
 
-    response = request.urlopen(req)
+    response = urllib.request.urlopen(req)
 
     the_page = response.read()
 

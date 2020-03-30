@@ -57,7 +57,7 @@ var app = new Vue({
          * info：音乐信息
          * */
         paly_music: function (info) {
-            const ap = new APlayer({
+            var ap = new APlayer({
                 container: document.getElementById('aplayer'),
                 // lrcType: 3,//url形式
                 lrcType: 1,

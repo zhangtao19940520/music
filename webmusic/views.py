@@ -30,22 +30,18 @@ def get_home_data(request):
     ret['search_history'] = search_history
 
     # 推荐歌曲
-    recommend_music_list = []  # 推荐歌单
-
-    recommend_music_json = recommend_tp()  # 获取推荐歌单的返回结果
-
-    recommend_music_list = recommend_music_json['data']['albums']  # 截取需要的数据
+    recommend_music_list = recommend_top()  # 获取推荐歌单的返回结果
 
     ret['recommend_music_list'] = recommend_music_list
 
-    #登录用户帐号
+    # 登录用户帐号
     ret['user_name'] = request.session.get('user_name', '')
-    #收藏
-    collect_list=collect.objects.filter(user_name=request.session.get('user_name', ''))
+    # 收藏
+    collect_list = collect.objects.filter(user_name=request.session.get('user_name', ''))
     collect_dic = {}
     if collect_list:
         for item in collect_list.values_list():
-            collect_dic[item[2]]={
+            collect_dic[item[2]] = {
                 'song_id': item[2],
                 'corver_pic': item[3],
                 'song_src': item[4],
@@ -54,7 +50,7 @@ def get_home_data(request):
                 'song_user_name': item[7],
             }
 
-    ret['collect_list']=collect_dic
+    ret['collect_list'] = collect_dic
 
     return JsonResponse(ret)
 
@@ -108,8 +104,7 @@ def get_album_info(request, albumId):
     """
     ret = {}
     if len(albumId) > 0:
-        album_info_json = album_info(albumId)
-        album_info_list = album_info_json['data']['tracksAudioPlay']
+        album_info_list = album_info(albumId)
         ret['album_info_list'] = album_info_list
     return JsonResponse(ret)
 

@@ -39,8 +39,7 @@ var app = new Vue({
                         var icon = 1;
                         if (response.has_error) {
                             icon = 0;
-                        }
-                        else {
+                        } else {
                             delete this_vue.collect_list.song_id;
                         }
                         layer.msg(response.msg, {icon: icon});
@@ -80,13 +79,11 @@ var app = new Vue({
                     var icon = 1;
                     if (response.has_error) {
                         icon = 0;
-                    }
-                    else {
+                    } else {
                         if (this_vue.collect_list[song_info.song_id] == undefined) {
                             this_vue.collect_list[song_info.song_id] = song_info;
                             $(the.target).attr('src', '/static/images/collect.png');
-                        }
-                        else {
+                        } else {
                             delete this_vue.collect_list[song_info.song_id];
                             $(the.target).attr('src', '/static/images/nocollect.png');
                         }
@@ -133,8 +130,7 @@ var app = new Vue({
                     var icon = 1;
                     if (response.has_error) {
                         icon = 0;
-                    }
-                    else {
+                    } else {
                         setInterval(function () {
                             location.href = '/';
                         }, 1000)
@@ -278,6 +274,7 @@ var app = new Vue({
                     }
                     //推荐歌单
                     this_vue.recommend_music_list = data.recommend_music_list;
+                    // console.log(this_vue.recommend_music_list);
                     //收藏
                     this_vue.collect_list = data.collect_list
                 },
@@ -326,13 +323,11 @@ var app = new Vue({
                     if (data.code == '000') {
                         layer.msg(data.msg, {icon: 0});
                         return false;
-                    }
-                    else {
+                    } else {
                         //添加搜索历史
                         if (!this_vue.search_history.includes(this_vue.search_msg)) {
                             this_vue.search_history.splice(0, 0, this_vue.search_msg);
-                        }
-                        else {
+                        } else {
                             this_vue.search_history.splice(this_vue.search_history.indexOf(this_vue.search_msg), 1);
                             this_vue.search_history.splice(0, 0, this_vue.search_msg);
                         }
@@ -369,7 +364,7 @@ var app = new Vue({
          * info：音乐信息
          * */
         paly_music: function (info) {
-            const ap = new APlayer({
+            var ap = new APlayer({
                 container: document.getElementById('aplayer'),
                 // lrcType: 3,//url形式
                 lrcType: 1,
@@ -384,7 +379,11 @@ var app = new Vue({
             ap.play();
         },
         paly_music_new: function (name, artist, url, cover, lrc) {
-            const ap = new APlayer({
+            console.log(name);
+            console.log(artist);
+            console.log(url);
+            console.log(cover);
+            var ap = new APlayer({
                 container: document.getElementById('aplayer'),
                 // lrcType: 3,//url形式
                 lrcType: 1,

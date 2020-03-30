@@ -1129,7 +1129,7 @@ body, .content {
 
 .list .line .index, .list .line .title, .list .line .song-name, .list .line .singer-name, .list .line .listen {
     text-overflow: ellipsis;
-    white-space: nowrap
+    /*white-space: nowrap*/
 }
 
 .list .line .title {
